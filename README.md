@@ -20,7 +20,7 @@
 <h3 align="center">Plan once. Pick up any project where you left off.</h3>
 
 <p align="center">
-  <img alt="groundwork - plan once, pick up any project where you left off" src="assets/banner.png" width="100%" />
+  <img alt="groundwork - plan once, pick up any project where you left off" src="assets/banner.avif" width="100%" />
 </p>
 
 ## What it is
