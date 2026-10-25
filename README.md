@@ -28,33 +28,18 @@ Just ask: "plan a new project", "where was I on this?", or "wrap up the session"
 
 ## Install
 
-The skill folder must be named `groundwork`.
-
-**Claude Code**
-
 ```sh
-git clone https://github.com/tsvillain/groundwork.git ~/.claude/skills/groundwork
+npx skills add tsvillain/groundwork -g
 ```
 
-For one project only, clone into `.claude/skills/groundwork` in that repo instead.
+This uses the open [`skills`](https://github.com/vercel-labs/skills) CLI (Node.js 22.20+). It detects your installed agents (Claude Code, Codex, Cursor and many more) and asks which to install to. Drop `-g` to install into the current project only. To skip the prompt, name the agents: `-a claude-code -a codex -a cursor`.
 
-**Codex**
-
-```sh
-git clone https://github.com/tsvillain/groundwork.git ~/.agents/skills/groundwork
-```
-
-For one project only, clone into `.agents/skills/groundwork` in that repo instead. Restart Codex if the skill does not appear.
-
-**Cursor**
+**Manual fallback**: clone into your agent's skills folder; the folder must be named `groundwork`.
 
 ```sh
-git clone https://github.com/tsvillain/groundwork.git ~/.cursor/skills/groundwork
+git clone https://github.com/tsvillain/groundwork.git ~/.claude/skills/groundwork  # Claude Code
+git clone https://github.com/tsvillain/groundwork.git ~/.agents/skills/groundwork  # Codex and Cursor
 ```
-
-Cursor also loads `~/.agents/skills/`, so one clone there serves both Codex and Cursor. For one project only, use `.cursor/skills/groundwork` or `.agents/skills/groundwork` in that repo.
-
-**Other agents**: clone into the agent's skills directory.
 
 ## Layout
 
