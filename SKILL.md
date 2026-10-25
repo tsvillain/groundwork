@@ -1,6 +1,6 @@
 ---
 name: groundwork
-description: Interview the user and write lean planning docs (AGENTS.md, PRD, ARCHITECTURE, DESIGN, TASKS, PROGRESS, ROADMAP, MARKETING) before a new project, then keep them current. Use when starting, planning, scoping or kicking off a new or side project; when resuming a project or asking where things stand and what to do next; and at the end of a work session to update progress and tick off tasks.
+description: Interview the user and write lean planning docs (AGENTS.md, PRD, ARCHITECTURE, DESIGN, TASKS, PROGRESS, ROADMAP, MARKETING) before a new project, then keep them current. Use when starting, planning, scoping or kicking off any new project (side project, startup, client work, team repo); when resuming a project or asking where things stand and what to do next; and at the end of a work session to update progress and tick off tasks.
 license: MIT
 ---
 
