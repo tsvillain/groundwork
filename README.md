@@ -22,7 +22,7 @@ Docs scale to the project: a weekend toy gets the three core files; a serious pr
 
 - **init**: asks sharp questions (who it is for, the core loop, stack, vibe, non-goals), pushes back on vague answers, then writes only the docs that fit.
 - **resume**: reads PROGRESS and TASKS, tells you where things stand, and picks the next task.
-- **update**: at session end, appends to PROGRESS and ticks TASKS so the docs never go stale.
+- **update**: after each finished task (offered) or when you wrap up, appends to PROGRESS and ticks TASKS so the docs never go stale.
 
 Just ask: "plan a new project", "where was I on this?", or "wrap up the session".
 

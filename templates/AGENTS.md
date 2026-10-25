@@ -6,7 +6,7 @@
 
 1. Read `docs/PROGRESS.md` and `docs/TASKS.md` before doing anything.
 2. Work on one task from `docs/TASKS.md` at a time.
-3. At session end, append to `docs/PROGRESS.md` and tick `docs/TASKS.md`.
+3. After each finished task, offer to run the groundwork update (append `docs/PROGRESS.md`, tick `docs/TASKS.md`); run it when the user is wrapping up.
 
 ## How to build
 

@@ -73,9 +73,9 @@ Then write the docs:
 
 If TASKS.md is fully ticked, read ROADMAP.md, propose the next milestone's tasks, and replace TASKS.md with them after the user agrees.
 
-### update: run at session end
+### update: after each task and at wrap-up
 
-Run this at the end of every work session, before the user leaves, even when not asked. Docs that go stale are worse than no docs.
+Run after each finished task (offer it) and whenever the user says they are wrapping up. Docs that go stale are worse than no docs.
 
 1. Append a dated entry to `docs/PROGRESS.md`: done, broke, next. Keep it short and concrete. Never rewrite past entries.
 2. Tick finished items in `docs/TASKS.md`. Add newly discovered steps. Remove steps that no longer make sense, and note why in PROGRESS.
