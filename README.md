@@ -48,7 +48,7 @@ It is a portable [Agent Skill](https://agentskills.io): a `SKILL.md` plus templa
 - **Scales to project size** - a weekend toy gets three docs; a serious product gets all eight.
 - **Always-read core, on-demand detail** - agents read `AGENTS.md`, `PROGRESS.md` and `TASKS.md` every session, and open the PRD, architecture, design, roadmap or marketing docs only when a task needs them.
 - **Resume** - "where was I?" gets what was done, what broke, and the next task.
-- **Update after each task** - the agent offers to log progress and tick tasks after every finished task, and runs it when you wrap up.
+- **Update after each task** - the agent offers to log progress and tick tasks after every finished task, and runs it when you wrap up; direction changes get a dated decision line so the next agent asks before undoing them.
 - **First-principles build rule** - every generated `AGENTS.md` tells agents to state the real problem, question inherited patterns, and build the simplest thing that fits; edit or drop it.
 - **Merges, never overwrites** - an existing `AGENTS.md` or `CLAUDE.md` keeps its content; groundwork adds its rules and docs index alongside.
 - **Works with any Agent Skills agent** - Claude Code, Codex, Cursor and others.

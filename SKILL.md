@@ -79,7 +79,7 @@ Run after each finished task (offer it) and whenever the user says they are wrap
 
 1. Append a dated entry to `docs/PROGRESS.md`: done, broke, next. Keep it short and concrete. Never rewrite past entries.
 2. Tick finished items in `docs/TASKS.md`. Add newly discovered steps. Remove steps that no longer make sense, and note why in PROGRESS.
-3. If a decision changed the stack, scope or design, update the matching doc in the same pass.
+3. If a decision changed the stack, scope or design, update the matching doc in the same pass and append a dated line to its Decisions section: `- YYYY-MM-DD: what changed - why`. Never delete past decision lines; mark superseded ones `(superseded YYYY-MM-DD)`.
 4. If an agent rule was learned the hard way, add it to `AGENTS.md`.
 5. Tell the user in one or two lines what changed in the docs.
 

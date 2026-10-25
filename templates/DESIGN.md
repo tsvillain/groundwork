@@ -23,3 +23,7 @@
 ## Never
 
 > Design moves that are off-brand, e.g. gradients, emoji in UI, more than two fonts.
+
+## Decisions
+
+> One line per choice or direction change: `- YYYY-MM-DD: what changed - why`.

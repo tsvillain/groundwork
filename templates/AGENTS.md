@@ -42,3 +42,5 @@ Build every feature from first principles:
 ## Ask first
 
 > Changes that need a human yes, e.g. schema changes, new services, deleting files.
+
+- Reversing a decision. Before reversing or "fixing" anything that looks intentional, check the Decisions sections in `docs/`; never reverse a recorded decision without asking the user.

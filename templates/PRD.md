@@ -27,3 +27,7 @@
 ## Open questions
 
 > Unknowns that could change scope. Delete when answered.
+
+## Decisions
+
+> One line per choice or direction change: `- YYYY-MM-DD: what changed - why`.

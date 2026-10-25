@@ -22,4 +22,4 @@
 
 ## Decisions
 
-> Notable choices and the reason for each, one line per decision.
+> One line per choice or direction change: `- YYYY-MM-DD: what changed - why`.
