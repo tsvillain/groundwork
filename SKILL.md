@@ -58,6 +58,7 @@ Then write the docs:
 
 - Copy each chosen template into place: `AGENTS.md` at the project root, everything else in `docs/`.
 - Replace every guidance line with real content from the interview. Delete sections that do not apply. Leave no placeholders.
+- Keep the prefilled "How to build" rule in AGENTS.md by default; the user may edit or drop it.
 - Write TASKS.md as small steps for the first milestone only, each finishable in one sitting.
 - Start PROGRESS.md with one entry: the docs were created.
 - If the project already has an `AGENTS.md` or `CLAUDE.md`, merge: keep existing content, add the rules and the docs index as new sections, and never overwrite or delete what is there. If only `CLAUDE.md` exists, add the docs index to it and ask before creating `AGENTS.md` beside it.

@@ -8,6 +8,15 @@
 2. Work on one task from `docs/TASKS.md` at a time.
 3. At session end, append to `docs/PROGRESS.md` and tick `docs/TASKS.md`.
 
+## How to build
+
+Build every feature from first principles:
+
+- Before building, state the real problem and the constraints in plain terms.
+- Question assumptions and inherited patterns; do not copy the usual approach or boilerplate by default.
+- Derive the simplest solution that satisfies those fundamentals.
+- When proposing a non-obvious approach, explain the reasoning briefly.
+
 ## Docs (read only when the task needs them)
 
 - `docs/PRD.md`: what we are building, for whom, non-goals.
