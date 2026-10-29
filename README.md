@@ -38,6 +38,7 @@ groundwork fixes that before the first line of code.
 It interviews you once, pushes back until the answers are concrete, and writes a small set of planning docs sized to the project.
 From then on, you and any agent read the same docs: a short core every session, the rest only when a task needs it.
 After each task, the docs get updated, so they never go stale.
+Already deep into a project and lost? groundwork can adopt it: it reads the code first, tells you what it sees, and asks only what the code cannot answer.
 
 groundwork is not an app and not a CLI.
 It is a portable [Agent Skill](https://agentskills.io): a `SKILL.md` plus templates that any agent supporting the open standard can follow.
@@ -47,6 +48,8 @@ It is a portable [Agent Skill](https://agentskills.io): a `SKILL.md` plus templa
 - **An interview that pushes back** - asks who it is for, the core loop, v1 scope, non-goals, stack and vibe, and refuses "everyone" or "clean and modern" as answers.
 - **Scales to project size** - a weekend toy gets three docs; a serious product gets all eight.
 - **Always-read core, on-demand detail** - agents read `AGENTS.md`, `PROGRESS.md` and `TASKS.md` every session, and open the PRD, architecture, design, roadmap or marketing docs only when a task needs them.
+- **Adopt an existing project** - for code with no plan, or a project that stalled: reads the README, manifest, layout, recent commits and TODOs, says "here is what I see, correct me", asks only the gaps plus "what were you doing when you got stuck?", and writes docs that start with getting unstuck.
+- **Commands** - `/groundwork init`, `adopt`, `resume` and `update` pick a mode directly; with no command, groundwork works it out from the project.
 - **Resume** - "where was I?" gets what was done, what broke, and the next task.
 - **Update after each task** - the agent offers to log progress and tick tasks after every finished task, and runs it when you wrap up; direction changes get a dated decision line so the next agent asks before undoing them.
 - **First-principles build rule** - every generated `AGENTS.md` tells agents to state the real problem, question inherited patterns, and build the simplest thing that fits; edit or drop it.
@@ -94,18 +97,51 @@ git clone https://github.com/tsvillain/groundwork.git ~/.agents/skills/groundwor
   Done: slot picker. Broke: timezones in reminder emails. Next: physio calendar view. Start it?
 ```
 
+Already have code but no plan, or stuck halfway? Adopt it:
+
+```sh
+> /groundwork adopt
+
+  Here is what I see: Next.js 15 + Prisma on Postgres, auth and the slot picker work,
+  payments half-built (stripe.ts, 3 TODOs), last commit 5 weeks ago. Correct me.
+  What were you trying to do when you got stuck?
+
+> stripe webhooks kept failing locally
+
+# ...it asks only the gaps (who, v1, non-goals), then writes the docs:
+# PROGRESS starts with an "adopted" entry, TASKS starts with getting unstuck.
+```
+
+### Commands
+
+Plain requests work; commands pick a mode directly.
+
+| Command | Use it when |
+|---------|-------------|
+| `/groundwork init` | Starting a new project from nothing |
+| `/groundwork adopt` | The project has code but no groundwork docs: joined, inherited or stalled |
+| `/groundwork resume` | Picking a project back up: "where was I?" |
+| `/groundwork update` | After a task or at wrap-up: log progress, tick tasks |
+
+In agents without slash commands for skills, say it instead: "groundwork adopt".
+With no command, groundwork looks at the project: no code means init, code but no `docs/PROGRESS.md` means adopt, docs present means resume.
+
 ## How It Works
 
 ```
-                 you
-                  │  "plan a new project"
-                  ▼
- ┌─────────────────────────────────────┐
- │ init: the interview                 │
- │ who, core loop, v1, non-goals,      │
- │ stack, vibe, never-dos, size        │
- └──────────────────┬──────────────────┘
-                    ▼
+                            you
+                             │
+          new project ───────┴─────── existing code
+                │                          │
+                ▼                          ▼
+ ┌─────────────────────────┐  ┌──────────────────────────┐
+ │ init: the interview     │  │ adopt: read the repo     │
+ │ who, core loop, v1,     │  │ "here is what I see",    │
+ │ non-goals, stack, vibe, │  │ ask only the gaps, plus  │
+ │ never-dos, size         │  │ "where did you get stuck"│
+ └────────────┬────────────┘  └─────────────┬────────────┘
+              └──────────────┬──────────────┘
+                             ▼
  your-project/
  ├── AGENTS.md            rules + docs index      always read
  └── docs/
@@ -124,6 +160,7 @@ git clone https://github.com/tsvillain/groundwork.git ~/.agents/skills/groundwor
 ```
 
 **init** interviews you and writes only the docs that fit.
+**adopt** reads an existing project first, confirms what it sees, asks only what the code cannot answer, and writes docs that describe the code as it is; README-versus-code drift becomes open questions, not guesses.
 **resume** reads the core docs, says where things stand, and picks the next task.
 **update** appends to `PROGRESS.md` and ticks `TASKS.md` after each finished task (offered) or when you wrap up.
 

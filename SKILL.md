@@ -1,6 +1,6 @@
 ---
 name: groundwork
-description: Interview the user and write lean planning docs (AGENTS.md, PRD, ARCHITECTURE, DESIGN, TASKS, PROGRESS, ROADMAP, MARKETING) before a new project, then keep them current. Use when starting, planning, scoping or kicking off any new project (side project, startup, client work, team repo); when resuming a project or asking where things stand and what to do next; and at the end of a work session to update progress and tick off tasks.
+description: Interview the user and write lean planning docs (AGENTS.md, PRD, ARCHITECTURE, DESIGN, TASKS, PROGRESS, ROADMAP, MARKETING) before a new project or for one already under way, then keep them current. Use when starting, planning, scoping or kicking off any new project (side project, startup, client work, team repo); when joining, inheriting or rescuing an existing or stalled project that has code but no plan; when resuming a project or asking where things stand and what to do next; and at the end of a work session to update progress and tick off tasks.
 license: MIT
 ---
 
@@ -35,9 +35,12 @@ Ask how big the project is before writing anything. Create only what fits:
 
 Skip a doc rather than fill it with guesses. It can be added later when the need is real.
 
-## Modes
+## Commands
 
-Pick the mode from the request. If unclear, check for `docs/PROGRESS.md`: missing means init, present means resume.
+The first word after the skill name picks the mode: `/groundwork init`, `/groundwork adopt`, `/groundwork resume`, `/groundwork update`.
+With no command, pick the mode from the request. If still unclear, look at the project: no code means init, code but no `docs/PROGRESS.md` means adopt, `docs/PROGRESS.md` present means resume.
+
+## Modes
 
 ### init: interview, then write
 
@@ -63,6 +66,19 @@ Then write the docs:
 - Start PROGRESS.md with one entry: the docs were created.
 - If the project already has an `AGENTS.md` or `CLAUDE.md`, merge: keep existing content, add the rules and the docs index as new sections, and never overwrite or delete what is there. If only `CLAUDE.md` exists, add the docs index to it and ask before creating `AGENTS.md` beside it.
 - Show the user a short summary of what was written and ask for corrections.
+
+### adopt: read the code, then fill the gaps
+
+For a project that already has code but no groundwork docs: joined mid-way, inherited, or stalled. Read before asking; never ask what the code already answers.
+
+1. **Read the repo.** README, the manifest (`package.json`, `pyproject.toml` or similar), the folder layout, the last ~30 commits, TODO and FIXME comments, and failing tests or build output if they are cheap to get.
+2. **Show what you see.** Draft the answers the code implies (stack, structure, what works, what is half-built, likely size) and present them as "here is what I see, correct me".
+3. **Interview only the gaps**, with init's pushback: who it is for, what done looks like for v1, the non-goals, what an agent must never do. Always ask: what were you trying to do when you got stuck?
+4. **Write the docs** as in init, with these differences:
+   - Start PROGRESS.md with an "adopted" entry summarising the history: done, broken, half-built.
+   - Write TASKS.md for the next milestone, starting with the steps to get unstuck.
+   - Write ARCHITECTURE.md as the code is, not as it should be.
+   - Where the README or existing docs disagree with the code, do not guess which is right: record each drift as an open question in PRD.md (in PROGRESS.md for tiny projects).
 
 ### resume: say where things stand
 
