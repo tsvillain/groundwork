@@ -35,6 +35,15 @@ Ask how big the project is before writing anything. Create only what fits:
 
 Skip a doc rather than fill it with guesses. It can be added later when the need is real.
 
+## Solo or team
+
+Solo is the default and needs nothing in this section. A project is in team mode when `AGENTS.md` has a `## Team` section. In team mode, a person's name is their `git config user.name`, and the modes change like this:
+
+- **init / adopt:** keep the `## Team` section from the AGENTS.md template and list the people. Add the line `docs/PROGRESS.md merge=union` to `.gitattributes`, so appended entries merge without conflicts. Do not add it for TASKS.md: union merge would duplicate lines that two people edited. In adopt, more than one author in the recent commits means team: show that as something you see instead of asking.
+- **resume:** run `git pull` first; if it cannot run cleanly, say so and carry on with the local docs. Report the user's own last entry, then a few lines on what others logged since. Skip tasks claimed by someone else when picking the next one.
+- **Claiming:** before starting a task, mark it `- [ ] (@name) step` and offer to push that claim on its own: to the default branch if the team pushes there, otherwise as the first commit of a draft PR. Never start a task someone else has claimed.
+- **update:** head the PROGRESS entry `## YYYY-MM-DD (name)`. Commit doc changes on the same branch and PR as the work they describe, never separately.
+
 ## Commands
 
 The first word after the skill name picks the mode: `/groundwork init`, `/groundwork adopt`, `/groundwork resume`, `/groundwork update`.
@@ -54,6 +63,7 @@ Ask a few questions at a time, not all at once. Push back on vague answers until
 6. **What is the vibe?** (UI projects) Three adjectives plus one product it should feel like. Push back on "clean and modern": ask what it must not look like.
 7. **What must an agent never do?** Things like adding dependencies without asking, touching certain files, or skipping tests.
 8. **How big is it?** Tiny, small or serious, per the scaling rule above.
+9. **Solo or team?** If more than one person will commit, ask who, and apply the team rules above.
 
 For serious projects, also ask for milestones (ROADMAP) and the audience, competitors and voice (MARKETING).
 

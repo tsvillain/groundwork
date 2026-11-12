@@ -1,6 +1,6 @@
 # Progress
 
-> Append-only log, newest entry at the bottom. Never rewrite past entries.
+> Append-only log, newest entry at the bottom. Never rewrite past entries. On a team, add your name to the heading: `## YYYY-MM-DD (name)`.
 
 ## YYYY-MM-DD
 

@@ -8,6 +8,16 @@
 2. Work on one task from `docs/TASKS.md` at a time.
 3. After each finished task, offer to run the groundwork update (append `docs/PROGRESS.md`, tick `docs/TASKS.md`); run it when the user is wrapping up.
 
+## Team
+
+> Keep this section only if more than one person commits to the project; its presence turns on team mode. Delete it for solo projects.
+
+- People: names as in `git config user.name`.
+- Pull before reading `docs/`.
+- Claim a task before starting it: `- [ ] (@name) step`, and push the claim. Never work on a task someone else has claimed.
+- Head each `docs/PROGRESS.md` entry `## YYYY-MM-DD (name)`.
+- Doc updates go in the same branch and PR as the work they describe.
+
 ## How to build
 
 Build every feature from first principles:

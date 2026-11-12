@@ -1,6 +1,6 @@
 # Tasks
 
-> Current milestone only. Each task is small enough to finish in one sitting.
+> Current milestone only. Each task is small enough to finish in one sitting. On a team, claim a task before starting it: `- [ ] (@name) step`.
 
 ## Milestone: name
 
